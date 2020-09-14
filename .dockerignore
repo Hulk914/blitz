@@ -1,0 +1,12 @@
+.git
+./blitzResumeUI/.git
+./blitzResumeUI/.firebase
+./blitzResumeUI/.editorconfig
+./blitzResumeUI/node_modules
+./blitzResumeNode/node_modules
+./blitzResumeUI/e2e
+./blitzResumeUI/docs
+./blitzResumeUI/.gitignore
+.gitignore
+*.zip
+*.md
