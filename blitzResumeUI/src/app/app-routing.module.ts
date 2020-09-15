@@ -1,10 +1,11 @@
-import { ChildTestComponent } from './child-test/child-test.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 const routes: Routes = [
-  { path: 'child', component: ChildTestComponent }
+  {
+    path: '',
+    loadChildren: () => import('./feature-modules/home/home.module').then(mod => mod.HomeModule)
+  }
 ];
 
 @NgModule({

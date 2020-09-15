@@ -1,0 +1,24 @@
+.blitz-card {
+  max-width: 30%;
+  border-radius: 10%;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+.blitz-card-title-font {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.blitz-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mat-card-image {
+  width: 330px;
+  height: 260px;
+}

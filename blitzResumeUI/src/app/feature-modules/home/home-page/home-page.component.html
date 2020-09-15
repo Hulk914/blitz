@@ -1,0 +1,27 @@
+<p>Please select your template to proceed. All templates are free.</p>
+<div class="blitz-card-container">
+    <mat-card *ngFor="let template of templatesList; let i=index" class="blitz-card"
+        (click)="onTemplateSelection(template)">
+        <mat-card-header class="justify-content-center">
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>
+                <a *ngIf="template.available" mat-button class="blitz-card-title-font" target="_blank"
+                    (click)="onTemplateSelection(template)">{{template.name | uppercase}}</a>
+                <p *ngIf="!template.available" class="blitz-card-title-font text-center">Template under development</p>
+            </mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <img *ngIf="template.available" class="p-2" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Loading...">
+        <img *ngIf="!template.available" class="p-2" mat-card-image src="assets/images/under-construction.jpg" alt="Loading...">
+
+        <mat-card-content>
+            <p>
+                This is a simple template to create your resume from
+            </p>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-center">
+            <button mat-stroked-button color="primary" (click)="onTemplateSelection(template)">Proceed</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
