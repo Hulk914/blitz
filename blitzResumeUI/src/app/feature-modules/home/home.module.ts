@@ -10,10 +10,11 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { GokuInputComponent } from './templates/goku-input/goku-input.component';
+import { GokuInputComponent } from './templates/goku/goku-input/goku-input.component';
+import { GokuViewComponent } from './templates/goku/goku-view/goku-view.component';
 
 @NgModule({
-  declarations: [HomePageComponent, GokuInputComponent],
+  declarations: [HomePageComponent, GokuInputComponent, GokuViewComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

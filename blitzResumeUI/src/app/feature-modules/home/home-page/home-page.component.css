@@ -1,8 +1,6 @@
 .blitz-card {
-  max-width: 30%;
+  width: 331px;
   border-radius: 10%;
-  cursor: pointer;
-  margin-top: 2%;
 }
 
 .blitz-card-title-font {

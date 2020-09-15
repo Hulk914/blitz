@@ -1,4 +1,8 @@
 <div class="container">
-    <h1 class="font-heading mt-5 mat-display-4">Blitz Resume Builder</h1>
+    <div id="printHide">
+        <h1 *ngIf="homeService.showAppTitle" class="font-heading mt-5 mat-display-4">Blitz Resume Builder</h1>
+        <p *ngIf="!homeService.showAppTitle" class="notice">All buttons and icons will disappear on print, to adjust sections use the down and up buttons
+            so that print page breaks can be handled as desired.</p>
+    </div>
     <router-outlet></router-outlet>
 </div>

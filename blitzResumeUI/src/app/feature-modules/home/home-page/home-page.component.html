@@ -1,7 +1,6 @@
 <p>Please select your template to proceed. All templates are free.</p>
 <div class="blitz-card-container">
-    <mat-card *ngFor="let template of templatesList; let i=index" class="blitz-card"
-        (click)="onTemplateSelection(template)">
+    <mat-card *ngFor="let template of templatesList; let i=index" class="blitz-card mb-5">
         <mat-card-header class="justify-content-center">
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>
@@ -11,9 +10,10 @@
             </mat-card-title>
             <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
         </mat-card-header>
-        <img *ngIf="template.available" class="p-2" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        <img *ngIf="template.available" class="p-2" mat-card-image
+            src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Loading...">
+        <img *ngIf="!template.available" class="p-2" mat-card-image src="assets/images/under-construction.jpg"
             alt="Loading...">
-        <img *ngIf="!template.available" class="p-2" mat-card-image src="assets/images/under-construction.jpg" alt="Loading...">
 
         <mat-card-content>
             <p>
