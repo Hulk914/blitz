@@ -6,3 +6,12 @@ p {
 mat-form-field {
     width: 80%;
 }
+
+::ng-deep .endDate .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin-bottom: 0;
+    padding-bottom: 0.25rem;
+}
+
+::ng-deep .endDate .mat-form-field-appearance-outline {
+    margin-bottom: 0;
+}

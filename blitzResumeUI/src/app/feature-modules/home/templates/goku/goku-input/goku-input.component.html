@@ -59,8 +59,9 @@
                 <p>
                     <mat-form-field>
                         <mat-chip-list #chipList>
-                            <mat-chip color="primary" selected *ngFor="let skill of professionalDetailsFormGroup?.value?.skills" [selectable]="true" [removable]="true"
-                                (removed)="remove(skill)">
+                            <mat-chip color="primary" selected
+                                *ngFor="let skill of professionalDetailsFormGroup?.value?.skills" [selectable]="true"
+                                [removable]="true" (removed)="remove(skill)">
                                 {{skill}}
                                 <fa-icon [icon]="faTimesCircle" matChipRemove></fa-icon>
                             </mat-chip>
@@ -70,6 +71,67 @@
                         </mat-chip-list>
                     </mat-form-field>
                 </p>
+                <div class="mt-0 mb-4 w-100" formArrayName="experience"
+                    *ngFor="let exp of experienceFormArray?.controls; let i = index;">
+                    <mat-card class="w-100">
+                        <h2>Company {{i+1}}</h2>
+                        <div class="d-flex flex-wrap" [formGroupName]="i">
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Company Name</mat-label>
+                                    <input matInput formControlName="companyName" placeholder="Enter your company name">
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Company City</mat-label>
+                                    <input matInput formControlName="companyCity" placeholder="Enter your company city">
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Designation</mat-label>
+                                    <input matInput formControlName="designation" placeholder="Enter your designation">
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Company Joining Date</mat-label>
+                                    <input matInput formControlName="startDate" [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </p>
+                            <p class="endDate">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Company Exit Date</mat-label>
+                                    <input matInput formControlName="endDate" [matDatepicker]="endPicker">
+                                    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                                    <mat-datepicker #endPicker></mat-datepicker>
+                                </mat-form-field>
+                                <mat-checkbox (change)="isPresentChanged($event, i)" formControlName="isPresent">
+                                    I am currently working in this company.
+                                </mat-checkbox>
+                            </p>
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Work Description</mat-label>
+                                    <textarea matInput formControlName="workDesc"></textarea>
+                                    <mat-hint>
+                                        <fa-icon [icon]="faInfoCircle"></fa-icon> Press enter to show a
+                                        separate bullet point in final résumé
+                                    </mat-hint>
+                                </mat-form-field>
+                            </p>
+                        </div>
+                        <div class="mt-4">
+                            <button mat-raised-button color="primary" class="mr-1" (click)="addCompany()">Add
+                                Company</button>
+                            <button *ngIf="experienceFormArray?.value?.length > 1" mat-raised-button color="warn"
+                                (click)="removeCompany(i)">Remove</button>
+                        </div>
+                    </mat-card>
+                </div>
             </div>
             <div class="d-flex justify-content-between">
                 <button mat-raised-button color="primary" class="mr-1" matStepperPrevious>Back</button>

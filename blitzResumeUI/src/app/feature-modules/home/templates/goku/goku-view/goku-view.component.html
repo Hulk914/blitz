@@ -33,33 +33,19 @@
         </div>
     </div>
     <hr>
-    <ng-container *ngFor="let experience of [1,2]">
-        <h3>Company Name, City</h3>
+    <ng-container *ngFor="let experience of professionalDetails?.experience">
+        <h3>{{experience?.companyName}}, {{experience?.companyCity}}</h3>
         <div class="italicsStyle">
-            <span>Job Designation, </span> <span>Apr 2015 - present</span>
+            <span>{{experience?.designation}}, </span>
+            <span>
+                {{experience?.startDate | date:'MMMM yyyy'}} - <span
+                    *ngIf="!experience?.isPresent">{{experience?.endDate | date:'MMMM yyyy'}}</span> <span
+                    *ngIf="experience?.isPresent">Present Company</span>
+            </span>
         </div>
-        <div class="orderedList">
+        <div *ngIf="experience?.workDesc" class="orderedList">
             <ul>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+                <li *ngFor="let work of experience?.workDesc?.split('\n')">{{work}}</li>
             </ul>
         </div>
     </ng-container>

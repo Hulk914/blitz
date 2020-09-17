@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { HomeService } from '../../../home.service';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-goku-input',
@@ -13,6 +14,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class GokuInputComponent implements OnInit {
   faTimesCircle = faTimesCircle;
+  faInfoCircle = faInfoCircle;
 
   personalDetailsFormGroup: FormGroup;
   professionalDetailsFormGroup: FormGroup;
@@ -36,7 +38,8 @@ export class GokuInputComponent implements OnInit {
     });
     this.professionalDetailsFormGroup = this.formBuilder.group({
       objective: [''],
-      skills: [[]]
+      skills: [[]],
+      experience: this.formBuilder.array([this.createExperienceFormGroup()])
     });
     this.educationDetailsFormGroup = this.formBuilder.group({
       secondCtrl: ['']
@@ -52,6 +55,38 @@ export class GokuInputComponent implements OnInit {
     });
   }
 
+  createExperienceFormGroup(): FormGroup {
+    return this.formBuilder.group({
+      companyName: '',
+      companyCity: '',
+      designation: '',
+      startDate: '',
+      endDate: '',
+      workDesc: '',
+      isPresent: false
+    });
+  }
+
+  isPresentChanged(event: MatCheckboxChange, ind) {
+    if (event.checked) {
+      this.experienceFormArray.get(ind.toString()).get('endDate').setValue(new Date());
+    } else {
+      this.experienceFormArray.get(ind.toString()).get('endDate').setValue(null);
+    }
+  }
+
+  get experienceFormArray(): FormArray {
+    return this.parentFormGroup.get('professionalDetailsForm').get('experience') as FormArray;
+  }
+
+  addCompany(): void {
+    this.experienceFormArray.push(this.createExperienceFormGroup());
+  }
+
+  removeCompany(index) {
+    this.experienceFormArray.removeAt(index);
+  }
+
   viewResume() {
     this.homeService.showAlerts = true;
     this.homeService.parentFormValues = this.parentFormGroup.value;
@@ -62,7 +97,6 @@ export class GokuInputComponent implements OnInit {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
     if ((value || '').trim()) {
       this.professionalDetailsFormGroup.value.skills.push(value.trim());
       this.professionalDetailsFormGroup.get('skills').updateValueAndValidity();
