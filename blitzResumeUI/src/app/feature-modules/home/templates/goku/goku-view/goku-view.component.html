@@ -1,4 +1,123 @@
-<div id="printWindow" class="container">
+<div *ngIf="!showStatic" id="printWindow" class="container">
+    <h1 class="goku-font-heading mat-display-3 text-capitalize">{{personalDetails?.name}}</h1>
+    <div class="goku-personal-info d-flex justify-content-center">
+        {{personalDetails?.city}}, {{personalDetails?.state}} - {{personalDetails?.pincode}} *
+        {{personalDetails?.phone}} * {{personalDetails?.email}}
+    </div>
+
+    <h2 class="goku-sub-heading mat-display-1">Career Objective</h2>
+    <hr>
+    <p class="mb-3">{{professionalDetails?.objective}}</p>
+    <br *ngFor="let break of lineBreak[0]">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="goku-sub-heading mat-display-1">Core Competencies</h2>
+        <div>
+            <button class="printButtons mr-1" (click)="addBreak(0)" mat-stroked-button color="primary">Down</button>
+            <button class="printButtons" (click)="removeBreak(0)" mat-stroked-button color="accent">Up</button>
+        </div>
+    </div>
+    <hr>
+    <div class="orderedOptions">
+        <ul class="d-flex mb-3">
+            <li *ngFor="let skill of professionalDetails?.skills">{{skill}}</li>
+        </ul>
+    </div>
+    <br *ngFor="let break of lineBreak[1]">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="goku-sub-heading mat-display-1">Professional Experience</h2>
+        <div>
+            <button class="printButtons mr-1" (click)="addBreak(1)" mat-stroked-button color="primary">Down</button>
+            <button class="printButtons" (click)="removeBreak(1)" mat-stroked-button color="accent">Up</button>
+        </div>
+    </div>
+    <hr>
+    <ng-container *ngFor="let experience of [1,2]">
+        <h3>Company Name, City</h3>
+        <div class="italicsStyle">
+            <span>Job Designation, </span> <span>Apr 2015 - present</span>
+        </div>
+        <div class="orderedList">
+            <ul>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+            </ul>
+        </div>
+    </ng-container>
+    <br *ngFor="let break of lineBreak[2]">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="goku-sub-heading mat-display-1">Education</h2>
+        <div>
+            <button class="printButtons mr-1" (click)="addBreak(2)" mat-stroked-button color="primary">Down</button>
+            <button class="printButtons" (click)="removeBreak(2)" mat-stroked-button color="accent">Up</button>
+        </div>
+    </div>
+    <hr>
+    <ng-container *ngFor="let experience of [1,2]">
+        <h3>Some University, Greater Noida</h3>
+        <div class="italicsStyle">
+            <span>Bachelor of Technology in Computer Science & Engineering, </span> <span>June 2016</span>
+        </div>
+        <p>Marks Obtained: 91/100</p>
+    </ng-container>
+    <br *ngFor="let break of lineBreak[3]">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="goku-sub-heading mat-display-1">Additional Skills & Achievements</h2>
+        <div>
+            <button class="printButtons mr-1" (click)="addBreak(3)" mat-stroked-button color="primary">Down</button>
+            <button class="printButtons" (click)="removeBreak(3)" mat-stroked-button color="accent">Up</button>
+        </div>
+    </div>
+    <hr>
+    <div class="orderedList">
+        <ul>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+        </ul>
+    </div>
+
+</div>
+
+<div *ngIf="showStatic" id="printWindow" class="container">
     <h1 class="goku-font-heading mat-display-3">Jane Smith</h1>
     <div class="goku-personal-info d-flex justify-content-center">
         Bengaluru, Karnataka - 560037 * +91-9999999999 * janesmith123@somemail.com

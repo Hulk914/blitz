@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { GokuInputComponent } from './templates/goku/goku-input/goku-input.component';
 import { GokuViewComponent } from './templates/goku/goku-view/goku-view.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatChipsModule} from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HomePageComponent, GokuInputComponent, GokuViewComponent],
@@ -24,7 +27,10 @@ import { GokuViewComponent } from './templates/goku/goku-view/goku-view.componen
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    FontAwesomeModule,
+    MatChipsModule,
+    MatIconModule
   ]
 })
 export class HomeModule { }

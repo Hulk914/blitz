@@ -1,6 +1,9 @@
-<p>Please select your template to proceed. All templates are free.</p>
+<div class="alert alert-info font-weight-bold" role="alert">
+    <fa-icon [icon]="faInfoCircle"></fa-icon> 
+    Please select your template to proceed. All templates are free.
+</div>
 <div class="blitz-card-container">
-    <mat-card *ngFor="let template of templatesList; let i=index" class="blitz-card mb-5">
+    <mat-card *ngFor="let template of templatesList; let i=index" class="blitz-card mb-4">
         <mat-card-header class="justify-content-center">
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>

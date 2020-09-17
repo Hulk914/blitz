@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home-page',
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  faInfoCircle = faInfoCircle;
   templatesList = [
     { available: true, name: 'goku' },
     { available: false },
