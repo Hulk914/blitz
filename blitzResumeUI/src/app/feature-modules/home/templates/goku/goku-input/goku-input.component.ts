@@ -42,16 +42,27 @@ export class GokuInputComponent implements OnInit {
       experience: this.formBuilder.array([this.createExperienceFormGroup()])
     });
     this.educationDetailsFormGroup = this.formBuilder.group({
-      secondCtrl: ['']
+      education: this.formBuilder.array([this.createEducationFormGroup()])
     });
     this.additionalDetailsFormGroup = this.formBuilder.group({
-      secondCtrl: ['']
+      additionalInfo: ['']
     });
     this.parentFormGroup = new FormGroup({
       personalDetailsForm: this.personalDetailsFormGroup,
       professionalDetailsForm: this.professionalDetailsFormGroup,
       educationDetailsForm: this.educationDetailsFormGroup,
       additionalDetailsForm: this.additionalDetailsFormGroup
+    });
+  }
+
+  createEducationFormGroup(): FormGroup {
+    return this.formBuilder.group({
+      instituteName: '',
+      instituteCity: '',
+      qualification: '',
+      marksObtained: '',
+      totalMarks: 100,
+      passDate: ''
     });
   }
 
@@ -79,12 +90,24 @@ export class GokuInputComponent implements OnInit {
     return this.parentFormGroup.get('professionalDetailsForm').get('experience') as FormArray;
   }
 
+  get educationFormArray(): FormArray {
+    return this.parentFormGroup.get('educationDetailsForm').get('education') as FormArray;
+  }
+
   addCompany(): void {
     this.experienceFormArray.push(this.createExperienceFormGroup());
   }
 
   removeCompany(index) {
     this.experienceFormArray.removeAt(index);
+  }
+
+  addEducation(): void {
+    this.educationFormArray.push(this.createEducationFormGroup());
+  }
+
+  removeEducation(index) {
+    this.educationFormArray.removeAt(index);
   }
 
   viewResume() {

@@ -65,6 +65,11 @@ hr {
     font-style: italic;
 }
 
+.printIcon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 @media print {
     .printButtons {
         display: none;
