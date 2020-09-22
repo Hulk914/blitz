@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home-page',
@@ -18,7 +19,7 @@ export class HomePageComponent implements OnInit {
     { available: false }
   ];
   constructor(
-    private router: Router
+    private router: Router, private homeService: HomeService
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +27,15 @@ export class HomePageComponent implements OnInit {
 
   onTemplateSelection(template) {
     if (template.available && template.name) {
+      this.homeService.parentFormValues = null;
       this.router.navigate(['template', template.name, 'input']);
+    }
+  }
+
+  onViewSample(template) {
+    if (template.available && template.name) {
+      this.homeService.showAlerts = true;
+      this.router.navigate(['template', template.name, 'view'], { queryParams: { isSample: true } });
     }
   }
 

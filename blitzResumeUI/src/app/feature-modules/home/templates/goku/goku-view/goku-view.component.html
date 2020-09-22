@@ -43,7 +43,7 @@
             <span>
                 {{experience?.startDate | date:'MMMM yyyy'}} - <span
                     *ngIf="!experience?.isPresent">{{experience?.endDate | date:'MMMM yyyy'}}</span> <span
-                    *ngIf="experience?.isPresent">Present Company</span>
+                    *ngIf="experience?.isPresent">Current Company</span>
             </span>
         </div>
         <div *ngIf="experience?.workDesc" class="orderedList">

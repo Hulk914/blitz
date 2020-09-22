@@ -47,12 +47,22 @@ export class GokuInputComponent implements OnInit {
     this.additionalDetailsFormGroup = this.formBuilder.group({
       additionalInfo: ['']
     });
+    if (this.homeService.parentFormValues) {
+      this.retainValues();
+    }
     this.parentFormGroup = new FormGroup({
       personalDetailsForm: this.personalDetailsFormGroup,
       professionalDetailsForm: this.professionalDetailsFormGroup,
       educationDetailsForm: this.educationDetailsFormGroup,
       additionalDetailsForm: this.additionalDetailsFormGroup
     });
+  }
+
+  retainValues() {
+    this.personalDetailsFormGroup.setValue(this.homeService.parentFormValues.personalDetailsForm);
+    this.professionalDetailsFormGroup.setValue(this.homeService.parentFormValues.professionalDetailsForm);
+    this.educationDetailsFormGroup.setValue(this.homeService.parentFormValues.educationDetailsForm);
+    this.additionalDetailsFormGroup.setValue(this.homeService.parentFormValues.additionalDetailsForm);
   }
 
   createEducationFormGroup(): FormGroup {

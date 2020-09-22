@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { HomeService } from './feature-modules/home/home.service';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faHome, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +12,18 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'blitzResumeUI';
   faInfoCircle = faInfoCircle;
-  constructor(public homeService: HomeService) { }
+  faHome = faHome;
+  faArrowLeft = faArrowLeft;
+
+  constructor(public homeService: HomeService, private router: Router, private location: Location) { }
+
+  navigateToHome() {
+    this.homeService.showAlerts = false;
+    this.router.navigate(['/']);
+  }
+
+  navigateBack() {
+    this.homeService.showAlerts = false;
+    this.location.back();
+  }
 }
