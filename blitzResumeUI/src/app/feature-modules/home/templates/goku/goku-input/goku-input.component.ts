@@ -34,7 +34,8 @@ export class GokuInputComponent implements OnInit {
       email: [''],
       state: [''],
       city: [''],
-      pincode: ['']
+      pincode: [''],
+      linkedIn: ['']
     });
     this.professionalDetailsFormGroup = this.formBuilder.group({
       objective: [''],

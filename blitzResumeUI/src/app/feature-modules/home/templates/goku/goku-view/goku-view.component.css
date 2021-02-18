@@ -70,6 +70,15 @@ hr {
     cursor: pointer;
 }
 
+.contactMe {
+    margin: 10px;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-style: ridge;
+    border-width: thick;
+    border-color: maroon;
+}
+
 @media print {
     .printButtons {
         display: none;

@@ -5,10 +5,11 @@ export const GOKU_SAMPLE = {
       email: 'ayushthakur2009@gmail.com',
       state: 'Karnataka',
       city: 'Bengaluru',
-      pincode: '560037'
+      pincode: '560037',
+      linkedIn: 'https://www.linkedin.com/in/ayush-thakur/'
     },
     professionalDetailsForm: {
-      objective: 'A logical thinker and fast coder with proven expertise in owning product development and unblocking colleagues on technical front. Area of expertise is angular but my technical capabilities are not limited to just one technology. I also have the ability to learn new technologies quickly & independently which makes me a valuable asset for any organization. Kindly go through my resume for more info. ',
+      objective: 'Working in the IT industry, I have got the oppurtunity to work on varied technologies throughout my career. At this moment looking to further apply my expertise in JS frameworks like Angular & React, along with my experience in multiple technologies & domains to help organizations reach their delivery goals, with best quality code and in minimal time frames',
       skills: [
         'Angular',
         'javascript',

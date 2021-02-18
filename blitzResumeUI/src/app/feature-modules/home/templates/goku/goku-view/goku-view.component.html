@@ -3,9 +3,17 @@
         <fa-icon [icon]="faPrint"></fa-icon>
     </div>
     <h1 class="goku-font-heading mat-display-3 text-capitalize">{{personalDetails?.name}}</h1>
-    <div class="goku-personal-info d-flex justify-content-center">
-        {{personalDetails?.city}}, {{personalDetails?.state}} - {{personalDetails?.pincode}} *
-        {{personalDetails?.phone}} * {{personalDetails?.email}}
+    <div class="contactMe mb-3">
+        <div class="goku-personal-info d-flex justify-content-center mb-0 mt-1">
+            <span class="mr-1 font-weight-normal">
+                A Resume can only do so much. Let's connect
+            </span>
+            <fa-icon [icon]="faArrowCircleDown"></fa-icon>
+        </div>
+        <div class="goku-personal-info d-flex justify-content-center">
+            {{personalDetails?.city}}, {{personalDetails?.state}} - {{personalDetails?.pincode}} *
+            {{personalDetails?.phone}} * {{personalDetails?.email}} * {{personalDetails?.linkedIn}}
+        </div>
     </div>
 
     <h2 class="goku-sub-heading mat-display-1">Career Objective</h2>
