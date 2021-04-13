@@ -1,4 +1,7 @@
 <div *ngIf="!showStatic" id="printWindow" class="container">
+    <div class="printButtons hide-large alert alert-info font-weight-bold text-center" role="alert">
+        <fa-icon [icon]="faInfoCircle"></fa-icon> Text wrapping on smaller devices will not affect print, Please click on print icon and see actual output
+    </div>
     <div class="printButtons printIcon float-right" (click)="openPrintWindow()">
         <fa-icon [icon]="faPrint"></fa-icon>
     </div>

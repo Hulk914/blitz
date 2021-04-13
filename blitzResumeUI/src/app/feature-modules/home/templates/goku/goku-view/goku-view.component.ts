@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../../home.service';
-import { faPrint, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faPrint, faArrowCircleDown, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
 import { GOKU_SAMPLE } from '../../../../../models/goku-sample';
 
@@ -13,6 +13,7 @@ export class GokuViewComponent implements OnInit {
   // change to interface once validations added in goku input
   faPrint = faPrint;
   faArrowCircleDown = faArrowCircleDown;
+  faInfoCircle = faInfoCircle;
   personalDetails: any = {};
   professionalDetails: any = {};
   educationDetails: any = {};

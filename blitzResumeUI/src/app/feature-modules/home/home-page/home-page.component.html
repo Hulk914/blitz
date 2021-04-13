@@ -1,4 +1,4 @@
-<div class="alert alert-info font-weight-bold" role="alert">
+<div class="alert alert-info font-weight-bold text-center" role="alert">
     <fa-icon [icon]="faInfoCircle"></fa-icon>
     Please select your template to proceed. All templates are free.
 </div>
@@ -16,7 +16,7 @@
         </mat-card-header>
         <img *ngIf="template.available" class="p-2" mat-card-image src="/assets/images/gokuThumbnail.PNG"
             alt="Loading...">
-        <img *ngIf="!template.available" class="p-2" mat-card-image src="/assets/images/under-construction.jpg"
+        <img *ngIf="!template.available" class="p-2 trnsprt" mat-card-image src="/assets/images/under-construction.jpg"
             alt="Loading...">
 
         <mat-card-content>

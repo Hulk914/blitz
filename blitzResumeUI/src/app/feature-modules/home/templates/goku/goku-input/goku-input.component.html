@@ -2,7 +2,7 @@
     <mat-step [stepControl]="parentFormGroup?.get('personalDetailsForm')" [editable]="true">
         <form [formGroup]="parentFormGroup?.get('personalDetailsForm')">
             <ng-template matStepLabel>Personal Details</ng-template>
-            <div class="d-flex mt-0 flex-wrap personal">
+            <div class="personalContainer mt-0">
                 <p>
                     <mat-form-field appearance="outline">
                         <mat-label>Name</mat-label>
@@ -55,7 +55,7 @@
     <mat-step [stepControl]="parentFormGroup?.get('professionalDetailsForm')" [editable]="true">
         <form [formGroup]="parentFormGroup?.get('professionalDetailsForm')">
             <ng-template matStepLabel>Professional Details</ng-template>
-            <div class="d-flex mt-0 flex-wrap personal">
+            <div class="personalContainer mt-0">
                 <p>
                     <mat-form-field appearance="outline">
                         <mat-label>Career Objective</mat-label>
@@ -81,7 +81,7 @@
                     *ngFor="let exp of experienceFormArray?.controls; let i = index;">
                     <mat-card class="w-100">
                         <h2>Company {{i+1}}</h2>
-                        <div class="d-flex flex-wrap" [formGroupName]="i">
+                        <div class="personalContainer" [formGroupName]="i">
                             <p>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Company Name</mat-label>
@@ -152,7 +152,7 @@
                 *ngFor="let edu of educationFormArray?.controls; let i = index;">
                 <mat-card class="w-100">
                     <h2>Qualification {{i+1}}</h2>
-                    <div class="d-flex flex-wrap" [formGroupName]="i">
+                    <div class="personalContainer" [formGroupName]="i">
                         <p>
                             <mat-form-field appearance="outline">
                                 <mat-label>University/School/College Name</mat-label>
@@ -211,7 +211,7 @@
     <mat-step [stepControl]="parentFormGroup?.get('additionalDetailsForm')" [editable]="true">
         <form [formGroup]="parentFormGroup?.get('additionalDetailsForm')">
             <ng-template matStepLabel>Additional Information</ng-template>
-            <div class="d-flex mt-0 flex-wrap">
+            <div class="personalContainer mt-0">
                 <p class="flex-basis_p">
                     <mat-form-field appearance="outline">
                         <mat-label>Additional Skills & Achievements</mat-label>

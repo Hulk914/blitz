@@ -20,3 +20,25 @@ mat-form-field {
     flex-basis: 100%;
     margin-bottom: 1rem;
 }
+
+.personalContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 520px) {
+    .personalContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+}

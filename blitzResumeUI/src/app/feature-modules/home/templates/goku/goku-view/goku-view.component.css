@@ -84,3 +84,9 @@ hr {
         display: none;
     }
 }
+
+@media screen and (min-width: 1020px) {
+    .hide-large {
+        display: none;
+    }
+}

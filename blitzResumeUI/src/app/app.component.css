@@ -1,14 +1,34 @@
 .font-heading {
     font-family: 'Open Sans', sans-serif;
     text-decoration: underline;
+    font-size: 100px;
+}
+
+.mainContainer {
+    margin-top: 3vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
 }
 
 .headingSection {
     background-color: black;
     border-radius: 15px;
     color: white;
-    padding: 20px !important;
+    padding-bottom: 10px !important;
     margin: 10px 0;
+}
+
+.headingSection h1 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.iconsContainer {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: 1%;
 }
 
 .notice {
@@ -18,10 +38,32 @@
 }
 
 .homeIcon {
-    font-size: 3rem;
+    font-size: 3vw;
     cursor: pointer;
     color: white;
     margin: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .font-heading {
+        font-size: 80px;
+    }
+
+    .iconsContainer {
+        padding-top: 3%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .font-heading {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .font-heading {
+        font-size: 50px;
+    }
 }
 
 @media print {
