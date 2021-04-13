@@ -66,6 +66,12 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .font-heading {
+        font-size: 30px;
+    }
+}
+
 @media print {
     #printHide {
         display: none;
