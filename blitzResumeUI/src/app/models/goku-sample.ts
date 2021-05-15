@@ -16,11 +16,11 @@ export const GOKU_SAMPLE = {
         'javascript',
         'bootstrap',
         'node.js',
+        'webpack',
         'HTML',
         'CSS',
         'GIT',
         'mongoDB',
-        'webpack',
         'java',
         'jersey'
       ],
