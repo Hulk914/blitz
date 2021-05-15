@@ -9,9 +9,10 @@ export const GOKU_SAMPLE = {
       linkedIn: 'https://www.linkedin.com/in/ayush-thakur/'
     },
     professionalDetailsForm: {
-      objective: 'Working in the IT industry, I have got the oppurtunity to work on varied technologies throughout my career. At this moment looking to further apply my expertise in JS frameworks like Angular & React, along with my experience in multiple technologies & domains to help organizations reach their delivery goals, with best quality code and in minimal time frames',
+      objective: 'Working in the IT industry, I have got the opportunity to work on varied technologies throughout my career. At this moment looking to further apply my expertise in JS frameworks like Angular & React, along with my experience in multiple technologies & domains to help an organization reach its delivery goals, with best quality code and in minimal time frames',
       skills: [
         'Angular',
+        'React',
         'javascript',
         'bootstrap',
         'node.js',
@@ -27,7 +28,7 @@ export const GOKU_SAMPLE = {
         {
           companyName: 'FIS',
           companyCity: 'Bengaluru',
-          designation: 'Senior Software Engineer',
+          designation: 'Software Engineer II',
           startDate: '2019-12-15T18:30:00.000Z',
           endDate: '2020-09-22T09:47:19.667Z',
           workDesc: 'Working on upgrading legacy banking application suite to modern tech stack with angular being used on ui along with angular material. Work involves delivering features and bug fixes for different modules and finding innovative & optimal solution to complex problems. Also, guiding colleagues new to angular',
@@ -82,6 +83,6 @@ export const GOKU_SAMPLE = {
       ]
     },
     additionalDetailsForm: {
-      additionalInfo: 'Live personal project on MEAN stack deployed as docker image - https://blitz-builder.herokuapp.com/\nReceived monthly appreciation in all project & companies I have worked in.\nConsistent academic performer scoring above 90% throughout\nIn extra-curricular actively involved in the field of music and sports'
+      additionalInfo: 'My Portfolio - https://ayush-portfolio-app.herokuapp.com/ \nLive personal project on MEAN stack deployed as docker image - https://blitz-builder.herokuapp.com/\nYoutube Channel (Angular tutorials) - https://www.youtube.com/playlist?list=PLZdPgkRI3ruiOnkAoA7UGi_ueg4PuB8qB\nReceived monthly appreciation in all project & companies I have worked in.\nConsistent academic performer scoring above 90% throughout\nIn extra-curricular actively involved in the field of music and sports'
     }
   };
